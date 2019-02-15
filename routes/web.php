@@ -12,4 +12,4 @@
 */
 
 Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
-Route::get('/detalhes',['as'=>'detalheseventos','uses'=>'DetalheEventosController@index']);
+Route::get('/detalhes/{id}',['as'=>'detalheseventos','uses'=>'DetalheEventosController@listaEvento']);

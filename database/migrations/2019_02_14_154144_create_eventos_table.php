@@ -15,11 +15,12 @@ class CreateEventosTable extends Migration
     {
         Schema::create('eventos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('imagem_evento');
             $table->string('nome_evento');
             $table->string('local_evento');
             $table->string('cidade_evento');
-            $table->string('resumo_evento');
-            $table->date('created_at');
+            $table->text('resumo_evento');
+            $table->dateTime('created_at');
             $table->decimal('valor', 5, 2);
         });
     }

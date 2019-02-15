@@ -12,19 +12,18 @@
 <div class="container" style="height: 780px;">
   
   <div class="row" style="margin-top: 100px;">
-    <h1>FENADOCE</h1>
-   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+    <h1>{{ $evento->nome_evento }}</h1>
+   <p>{{ $evento->resumo_evento }}</p>
 
    <div style="display: flex; flex-direction: column;">
-       <p class="card-text" style="font-weight: bold;">DATA: 26-06-2019 | HORÁRIO: 23:00 HS</p>
-       <p class="card-text" style="font-weight: bold;">LOCAL: CENTRO DE EVENTOS</p>
-       <p class="card-text" style="font-weight: bold;">a partir de R$ 15,00</p>
+       <p class="card-text" style="font-weight: bold;">DATA: {{ $evento->created_at->format('d/m/Y') }} | HORÁRIO: {{ $evento->created_at->format('H:i') }} HS</p>
+       <p class="card-text" style="font-weight: bold;">LOCAL: {{ $evento->local_evento }}</p>
+       <p class="card-text" style="font-weight: bold;">a partir de R$ {{ $evento->valor }}</p>
    </div>
 </div>
-<div style="float: right;">
 <button type="button" style="margin-top: 50px;" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
   COMPRAR INGRESSOS
-</button></div>
+</button>
 {{-- <button type="button" id="comprar" class="btn btn-danger">COMPRAR INGRESSO</button> --}}
  
 </div>
@@ -39,24 +38,23 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">EVENTO</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-header" style="background-color: black;">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: #fff;">EVENTO</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #fff;">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h3>FENADOCE</h3>
-        <h5>26-06-2019 - Pelotas / Rio Grande do Sul</h5>
-        <h5>PASSAPORTE FENADOCE - ADULTO - 1º LOTE</h5>
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        <input type="text" class="form-control" id="portador" placeholder="nome do portador">
+        <h3>{{ $evento->nome_evento }}</h3>
+        <h5>{{ $evento->created_at->format('d/m/Y') }} - {{ $evento->cidade_evento }} / Rio Grande do Sul</h5>
+        <h5>PASSAPORTE {{ $evento->nome_evento }} - ADULTO - 1º LOTE</h5>
+          <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+        </select>        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">FECHAR</button>
