@@ -1,7 +1,11 @@
 @include('layout._includes.topo')
-<div class="jumbotron">    
-     
-</div>
+
+  
+<img  src="{{ asset($evento->imagem_evento) }}" style="float:left; width:100%; height:560px;  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;" class="fluid-img"/>
+
 
 <h4>Voltar para home <a href="{{ route('home') }}"><i class="fas fa-undo"></i></a></h4>
 
@@ -17,7 +21,7 @@
        <p class="card-text" style="font-weight: bold;">a partir de R$ {{ $evento->valor }}</p>
    </div>
 </div>
-<button type="button" id="btncompra" style="margin-top: 50px;" class="btn btn-danger">
+<button type="button" id="btningressos" style="margin-top: 50px;" class="btn btn-danger">
   COMPRAR INGRESSOS
 </button>
 
@@ -53,10 +57,30 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">FECHAR</button>
-        <button type="button" class="btn btn-primary">COMPRAR</button>
+        <button type="button" class="btn btn-primary" id="btncompra">COMPRAR</button>
       </div>
     </div>
   </div>
 </div>
 <!-- Modal --> 
+
+<div class="modal" id="modalOK" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">SEU INGRESSO</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Seu pedido está sendo processado...</p>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 @include('layout._includes.footer')
