@@ -14,8 +14,8 @@ class EventosTableSeeder extends Seeder
         //
           DB::table('eventos')->insert([
             'imagem_evento' => asset('fourall/public/img/evento_1.jpg'), 
-            'nome_evento' => 'FENADOCE',
-            'local_evento' => 'CENTRO DE EVENTOS',
+            'nome_evento' => 'BALONISMO',
+            'local_evento' => 'PRAIA DO LARANJAL',
             'cidade_evento' => 'PELOTAS - RS',
             'resumo_evento' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),

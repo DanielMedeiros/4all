@@ -19,9 +19,8 @@ class DetalheEventosController extends Controller
     }
 
     public function listaEvento($id)
-    {
-        
-        $evento = eventos::find($id);
+    {        
+       $evento = eventos::find($id);
        return view('detalheseventos',compact('evento'));
     }
 }
