@@ -15,7 +15,6 @@ class HomeController extends Controller
     public function index()
     {
       $eventos = eventos::all();
-      //dd($eventos);
       return view('home',compact('eventos'));
     }
    

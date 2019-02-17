@@ -38,11 +38,7 @@
               $("#selectTicket").val($("#selectTicket option:first").val()); 
               document.getElementById("quantidade").value = 1;
             });
-            // $('.toast').toast('show'); 
-
-            //$('#compraModal').modal('show');
-            //$('.toast').toast('show');
-            //alert('show');
+        
           });
            
             $('#btncompra').on('click', function() {
