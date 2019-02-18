@@ -1,3 +1,14 @@
+<h3>OBSERVAÇÃO: </h3>
+<h4>Primeiro: Criar o banco de dados.</h4>
+<p>CREATE DATABASE fourall;</p>
+
+<h4>Segundo: rodar as migrations.</h4>
+<p>php artisan migrate</p>
+
+<h4>Terceiro: rodar os seeders para ter no minimo três linha inseridas no banco para testar.</h4>
+<p> php artisan db:seed --class=EventosTableSeeder</p>
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
